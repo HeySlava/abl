@@ -1,7 +1,8 @@
 import json
-import requests
-from pathlib import Path
 import time
+from pathlib import Path
+
+import requests
 
 
 DATA_FOLDER = Path('./data')

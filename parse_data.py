@@ -1,7 +1,6 @@
-import json
 import csv
+import json
 from pathlib import Path
-
 from typing import NamedTuple
 
 
@@ -31,11 +30,11 @@ for f in files:
                     tournament_team_user_id=d['tournament_team_user_id'],
                     team_id=d['team_id'],
                     game_time=d['game_time'],
-                    first_name=d['tournament_team_user']['league_player']['first_name'],
-                    last_name=d['tournament_team_user']['league_player']['last_name'],
-                    user_id=d['tournament_team_user']['league_player']['user_id'],
-                    team_name=d['tournament_team_user']['tournament_team']['name'],
-                    sport_id=d['tournament_team_user']['tournament_team']['team']['sport']['id'],
+                    first_name=d['tournament_team_user']['league_player']['first_name'],  # noqa: E501
+                    last_name=d['tournament_team_user']['league_player']['last_name'],  # noqa: E501
+                    user_id=d['tournament_team_user']['league_player']['user_id'],  # noqa: E501
+                    team_name=d['tournament_team_user']['tournament_team']['name'],  # noqa: E501
+                    sport_id=d['tournament_team_user']['tournament_team']['team']['sport']['id'],  # noqa: E501
                     tour=tour,
                 )
                 for d in data
