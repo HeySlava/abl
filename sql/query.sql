@@ -1,6 +1,23 @@
-drop table if exists dinis;
+drop table if exists users;
 
-create table if not exists dinis as
+CREATE TABLE IF NOT EXISTS users (
+                tournament_team_user_id INTEGER,
+                team_id INTEGER,
+                game_time REAL,
+                first_name TEXT,
+                last_name TEXT,
+                user_id INTEGER,
+                team_name TEXT,
+                sport_id INTEGER,
+                tour INTEGER);
+
+.mode csv
+.headers on
+.separator ,
+.import data/users.csv users
+
+drop table if exists costs;
+create table if not exists costs as
 with C as (
 select 30000.0 as price
 , 2000 as fixed_price
@@ -41,6 +58,3 @@ window
 	w as (PARTITION by tour)
 	, w1 as (PARTITION by user_id)
 order by tour;
-
-
-select * from dinis;
